@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const App = () => {
+const App = () => {
   const [imageUrl, setImageUrl] = useState("");
 
   const handleImageAnalysis = () => {
@@ -15,21 +15,24 @@ export const App = () => {
 
   return (
     <div>
-      <h1>Aplicación de Computer Vision</h1>
+      <h1>Computer Vision App</h1>
 
       <label>
-        Dirección URL de la imagen:
+        Insert URL or type prompt:
         <input
           type="text"
           value={imageUrl}
           onChange={(e) => setImageUrl(e.target.value)}
+          placeholder="Enter URL to analyze or textual prompt to generate an image"
         />
       </label>
 
       <br />
 
-      <button onClick={handleImageAnalysis}>Analizar Imagen</button>
-      <button onClick={handleImageGeneration}>Generar Imagen</button>
+      <button onClick={handleImageAnalysis}>Analyze</button>
+      <button onClick={handleImageGeneration}>Generate</button>
     </div>
   );
 };
+
+export default App;
