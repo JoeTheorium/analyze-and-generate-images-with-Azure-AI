@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 
 const App = () => {
   const [imageUrl, setImageUrl] = useState("");
@@ -14,23 +15,22 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="app-container">
       <h1>Computer Vision App</h1>
-
-      <label>
+      <label htmlFor="imageUrlInput">
         Insert URL or type prompt:
         <input
+          id="imageUrlInput"
           type="text"
           value={imageUrl}
           onChange={(e) => setImageUrl(e.target.value)}
           placeholder="Enter URL to analyze or textual prompt to generate an image"
         />
       </label>
-
-      <br />
-
-      <button onClick={handleImageAnalysis}>Analyze</button>
-      <button onClick={handleImageGeneration}>Generate</button>
+      <div className="button-container">
+        <button onClick={handleImageAnalysis}>Analyze</button>
+        <button onClick={handleImageGeneration}>Generate</button>
+      </div>
     </div>
   );
 };
